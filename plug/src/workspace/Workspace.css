@@ -1,0 +1,557 @@
+/* Conteneur principal de l'espace de travail */
+.work_container {
+  width: 100vw; /* 100% de la largeur de la vue */
+  height: 100vh; /* 100% de la hauteur de la vue */
+  display: flex;
+  flex-direction: row; /* Disposition horizontale des éléments enfants */
+  height: 100%;
+}
+
+/* Barre latérale gauche */
+.sidebar {
+  width: 5%;
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /* Disposition verticale des éléments enfants */
+}
+
+/* Icône en haut de la barre latérale */
+.top-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* Ajustez le rembourrage selon les besoins */
+}
+
+/* Conteneur d'icône en bas de la barre latérale */
+.icon-container {
+  margin-top: auto; /* Alignement en haut de la barre latérale */
+  display: flex;
+  margin-bottom: 50px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Style de l'icône d'ajout de tâche */
+.add_task_icon {
+  color: grey;
+  height: 50px; /* Ajustez la hauteur de l'icône selon les besoins */
+  width: 50px; /* Ajustez la largeur de l'icône selon les besoins */
+}
+
+/* Indicateur de connexion en haut à droite de la barre latérale */
+.connected-indicator {
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  width: 12px;
+  height: 12px;
+  background-color: green;
+  border-radius: 50%;
+  border: 2px solid black; /* Optionnel : Ajoutez une bordure pour une meilleure visibilité */
+}
+
+/* Bouton de déconnexion en bas de la barre latérale */
+
+.logout-button{
+  position: absolute;
+  bottom: 13%;
+  left: 40px;
+  width: 70px;
+  height: 25px;
+  background-color: white;
+  border-radius: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+/* Conteneur principal de la tâche */
+.task_container {
+  height: 100vh; /* Hauteur de 100% de la vue */
+  color: black;
+  text-align: center;
+  width: 95%;
+  display: flex;
+  flex-direction: column; /* Disposition verticale des éléments enfants */
+}
+
+/* Barre de navigation en haut */
+.navbar {
+  background-color: #eeeeeeda;
+  width: calc(100% - 10px);
+  height: 10%;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+/* Style du texte dans la barre de navigation */
+.navbar h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+/* Barre de recherche */
+.searchbar {
+  width: 100%;
+  height: 15%;
+}
+
+/* Groupe d'éléments de la barre de recherche */
+.input-group {
+  position: absolute;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+}
+
+/* Conteneur de recherche avec ombre et bord arrondi */
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #f8f8f8;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  width: 360px;
+  height: 40px;
+}
+
+/* Style de la première entrée de recherche */
+.input {
+  height: 30px;
+  width: 180px;
+  color: #333;
+  font-size: 1em;
+  border: none;
+  border-radius: 10px 0 0 10px;
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0.1em 2em;
+}
+
+/* Style de la deuxième entrée de recherche (mot-clé) */
+.keyword {
+  height: 30px;
+  width: 105px;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  background-color: #f8f8f8;
+  color: #333;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Icône de recherche dans la barre */
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translate(0, -50%);
+  height: 24px;
+  width: 24px;
+}
+
+/* Séparateur vertical dans la barre de recherche */
+.separator {
+  height: 30px;
+}
+
+/* Style de la barre verticale du séparateur */
+.separator::before {
+  content: "|";
+  color: #333;
+  font-size: 20px;
+}
+
+/* Style du texte de l'entrée de recherche par mot-clé */
+.keyword::placeholder {
+  color: black;
+}
+
+/* Conteneur de l'entrée de date avec ombre et bord arrondi */
+.date-input-container {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  margin-left: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  padding: 5px;
+  border-radius: 10px;
+  width: 240px;
+  background-color: #f8f8f8;
+}
+
+/* Style de l'entrée de date */
+.date-input {
+  height: 30px;
+  width: 110px;
+  border: none;
+  background-color: #f8f8f8;
+  color: #333;
+  font-size: 15px;
+  border-radius: 0;
+}
+
+/* Icône dans l'entrée de date */
+.icon {
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(0, -50%);
+  border-radius: 10px 0 0 10px;
+}
+
+/* Bouton "Aujourd'hui" dans l'entrée de date */
+.aujourdhui-button {
+  margin-top: 1.5px;
+  margin-left: 25px;
+  height: 32px;
+  border: none;
+  width: 100px;
+  border-radius: 10px;
+  background-color: black;
+  color: gainsboro;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+  
+/* Conteneur principal des tâches */
+.tasks {
+  width: calc(100% - 15px); /* Calcul de la largeur en soustrayant 15px */
+  height: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 15px;
+  padding-left: 15px;
+  background-color: white;
+}
+
+/* Carte individuelle de la tâche */
+.task_card {
+  background: #fdfbfbda;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  width: 100%; /* Prend toute la largeur du conteneur */
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 15px;
+  height: 200px; /* Ajuste la hauteur en fonction du contenu */
+}
+
+/* Conteneur du titre de la tâche */
+.title_container {
+  width: 100%;
+  height: 20%;
+  height: 4rem;
+  display: flex;
+}
+
+/* Première lettre stylisée du titre */
+.first_letter {
+  background-color: aquamarine;
+  width: 5.2rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 35%;
+}
+
+/* Style de la lettre */
+.letter {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Style du titre complet */
+.title {
+  width: 100%;
+  margin-left: 5px;
+  overflow: hidden;
+}
+
+/* Style du titre complet avec troncature et ellipsis */
+.full_title {
+  color: #333;
+  font-weight: bolder;
+  font-size: 18px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Style du corps de la description */
+.description_body {
+  height: 70%;
+  font-size: 0.9rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* Limite le nombre de lignes à 5 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Conteneur de la sélection et icône */
+.select_container {
+  height: 10%;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  padding-bottom: 0;
+}
+
+/* Conteneur de l'icône */
+.icon_container {
+  margin-right: 10px;
+}
+
+/* Style de l'icône SVG */
+.icon_container svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Style de la sélection */
+.choice {
+  padding: 2px 14px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+
+
+/* Style de l'overlay (fenêtre modale) */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Fond noir semi-transparent */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100; /* Assure que l'overlay est au-dessus des autres éléments */
+}
+
+/* Style du contenu de l'overlay */
+.overlay-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Effet de carte avec une ombre optionnelle */
+}
+
+/* Conteneur principal de l'ajout de tâche */
+.addtask {
+  width: 100%;
+}
+
+/* Conteneur du formulaire d'ajout de tâche */
+.addtask_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Style du texte du formulaire */
+.text {
+  font-size: 1rem;
+  text-align: left;
+  width: 100%;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+/* Style des champs de saisie */
+.taskinput,
+.taskinput2 {
+  width: 250px;
+  height: 30px; /* Hauteur du champ Titre */
+  border-radius: 8px;
+  padding: 7px 16px;
+  margin-top: 10px; /* Marge ajoutée pour le champ Description */
+  box-shadow: rgba(77, 79, 82, 0.2) 0px 8px 24px;
+  border: 2px solid rgb(184, 180, 180);
+  font-size: 0.8rem;
+  outline: none;
+}
+
+/* Style du texte de placeholder pour les champs de saisie */
+.taskinput::placeholder,
+.taskinput2::placeholder {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Conteneur des boutons de l'overlay */
+.addtask-button-wrapper {
+  margin-top: 5px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+/* Style des boutons du formulaire d'ajout de tâche */
+.addtask-button {
+  width: 40%;
+  height: 40px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Style de l'icône des boutons */
+.btn_icon {
+  height: 14px;
+  width: 14px;
+}
+
+/* Style du bouton principal (AJOUTER, MODIFIER) */
+.primary {
+  background-color: #056bfa27; /* Couleur de fond semi-transparente */
+}
+
+/* Style du bouton principal au survol */
+.primary:hover {
+  background-color: #056bfa49; /* Couleur de fond semi-transparente au survol */
+}
+
+/* Style du bouton secondaire (ANNULER, SUPPRIMER) */
+.secondary {
+  background-color: #ddd; /* Couleur de fond grise */
+}
+
+/* Style du bouton secondaire au survol */
+.secondary:hover {
+  background-color: rgb(154, 154, 154); /* Couleur de fond rouge au survol */
+}
+
+/* Style des options de statut des tâches */
+.choice.green {
+  background-color: #40e4cb; /* Couleur de fond verte pour le statut 'Done' */
+}
+
+.choice.yellow {
+  background-color: #ecd448; /* Couleur de fond jaune pour le statut 'En Cours' */
+}
+
+.choice.red {
+  background-color: rgb(229, 129, 129); /* Couleur de fond rouge pour le statut 'Not Done' */
+}
+
+
+
+/* Media Query pour les écrans larges (largeur d'écran ≥ 768px) */
+@media (min-width: 768px) {
+  /* Ajustement de la largeur des cartes de tâches pour les écrans larges */
+  .task_card {
+      width: calc(16.5% - 10px);
+  }
+}
+
+/* Media Query pour les écrans de taille tablette (largeur d'écran ≤ 768px) */
+@media only screen and (max-width: 768px) {
+  /* Ajustements pour la barre latérale sur les tablettes */
+  .sidebar {
+      width: 15%;
+  }
+
+  /* Ajustement de la hauteur de la barre de navigation pour les tablettes */
+  .navbar {
+      height: 8%;
+  }
+
+  /* Ajustement de la taille du texte du titre de la barre de navigation pour les tablettes */
+  .navbar h2 {
+      font-size: 24px;
+  }
+
+  /* Ajustement de la largeur maximale de la zone de recherche pour les tablettes */
+  .search-container {
+      max-width: 300px;
+  }
+
+  /* Ajustement de la largeur des champs de saisie pour les tablettes */
+  .input {
+      width: 50%;
+  }
+
+  /* Ajustement de la largeur des champs de saisie de mot-clé pour les tablettes */
+  .keyword {
+      width: 50%;
+  }
+}
+
+/* Styles responsives pour les téléphones (largeur d'écran ≤ 480px) */
+@media only screen and (max-width: 480px) {
+  /* Ajustements pour la barre latérale sur les téléphones */
+  .sidebar {
+      width: 100%;
+  }
+
+  /* Ajustement de la hauteur de la barre de navigation pour les téléphones */
+  .navbar {
+      height: 6%;
+  }
+
+  /* Ajustement de la taille du texte du titre de la barre de navigation pour les téléphones */
+  .navbar h2 {
+      font-size: 20px;
+  }
+
+  /* Ajustement de la largeur maximale de la zone de recherche pour les téléphones */
+  .search-container {
+      max-width: 280px;
+  }
+
+  /* Ajustement de la largeur des champs de saisie pour les téléphones */
+  .input {
+      width: 50%;
+  }
+
+  /* Ajustement de la largeur des champs de saisie de mot-clé pour les téléphones */
+  .keyword {
+      width: 50%;
+  }
+
+  /* Ajustement de la largeur de la zone de saisie de date pour les téléphones */
+  .date-input-container {
+      width: 100px;
+  }
+
+  /* Ajustement de la largeur de la saisie de date pour les téléphones */
+  .date-input {
+      width: 50px;
+  }
+
+  /* Ajustement de la largeur du bouton 'Aujourd'hui' pour les téléphones */
+  .aujourdhui-button {
+      width: 70px;
+  }
+}

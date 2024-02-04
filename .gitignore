@@ -1,0 +1,5 @@
+./backend/node_modules
+./backend/Dockerfile
+./plug/node_modules
+./plug/Dockerfile
+.git
