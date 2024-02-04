@@ -3,3 +3,4 @@
 ./plug/node_modules
 ./plug/Dockerfile
 .git
+./backend/.env
