@@ -122,7 +122,7 @@ router.get('/GetByStatut/:statut', async (req, res) => {
 router.get('/search/:keyword', async (req, res) => {
     try {
         const keyword = req.params.keyword.toLowerCase();
-        const tasks = await Task.fisnd({
+        const tasks = await Task.find({
             $or: [
                 { Titre: { $regex: keyword, $options: 'i' } },
                 { Description: { $regex: keyword, $options: 'i' } },

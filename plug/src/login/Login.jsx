@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Login.css';
 import UserService from '../services/user.js';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Login = () => {
   // États pour stocker les valeurs du formulaire
@@ -19,7 +20,17 @@ const Login = () => {
       
       // Appeler le service utilisateur pour effectuer la connexion
       const response = await UserService.login(user);
+
+      
       console.log(response.data);
+      // animation de connexion réussie
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Login Successful",
+        showConfirmButton: false,
+        timer: 1500
+      });
 
       // Extraire le token et l'ID utilisateur de la réponse
       const token = response.data.token;
@@ -31,8 +42,21 @@ const Login = () => {
 
       // Rediriger l'utilisateur vers la page des tâches après la connexion réussie
       navigate('/tasks');
+
+
+
     } catch (error) {
       console.error('Échec de la connexion :', error);
+      
+      // animation de l'echec de  connexion 
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Invalid Credentials",
+        showConfirmButton: false,
+        timer: 1500
+      });
+
     }
   };
 
@@ -69,7 +93,7 @@ const Login = () => {
           <label>Password</label>
         </div>
         {/* Bouton de soumission du formulaire */}
-        <button type="submit" className='btn_login'>
+        <button type="submit" className='btn_login' onClick={handleLogin}>
           LOGIN
         </button>
       </form>

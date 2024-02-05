@@ -386,10 +386,21 @@
 }
 
 /* Style des champs de saisie */
-.taskinput,
+
+.taskinput{
+  width: 250px;
+  height: 40px; /* Hauteur du champ Titre */
+  border-radius: 8px;
+  padding: 7px 16px;
+  margin-top: 10px; /* Marge ajoutée pour le champ Description */
+  box-shadow: rgba(77, 79, 82, 0.2) 0px 8px 24px;
+  border: 2px solid rgb(184, 180, 180);
+  font-size: 0.8rem;
+  outline: none;
+}
 .taskinput2 {
   width: 250px;
-  height: 30px; /* Hauteur du champ Titre */
+  height: 120px; /* Hauteur du champ Titre */
   border-radius: 8px;
   padding: 7px 16px;
   margin-top: 10px; /* Marge ajoutée pour le champ Description */

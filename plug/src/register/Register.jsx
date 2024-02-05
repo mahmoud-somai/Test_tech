@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../login/Login.css';
 import UserService from '../services/user.js';
 import { useNavigate } from 'react-router-dom';
-
+import Swal from 'sweetalert2';
 const Register = () => {
   // État pour stocker les données de l'utilisateur
   const [user, setUser] = useState({
@@ -27,11 +27,27 @@ const Register = () => {
 
       // Gérer la réponse ou rediriger vers une autre page si nécessaire
       console.log('Inscription réussie :', response.data);
+            // animation d'inscription réussie
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Registration Successful",
+              showConfirmButton: false,
+              timer: 1500
+            });
       navigate('/');
     } catch (error) {
       // Gérer l'échec de l'inscription
       console.error("L'inscription a échoué :", error);
       navigate('/register');
+      // animation de echec d'inscription
+      Swal.fire({
+      position: "top-end",
+      icon: "error",
+      title: "Registration Failed",
+      showConfirmButton: false,
+      timer: 1500
+      });
     }
   };
 

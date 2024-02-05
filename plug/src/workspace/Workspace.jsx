@@ -257,7 +257,7 @@ const handleLogoutClick = () => {
 
   return (
 
-    <div class="work_container">
+    <div className="work_container">
 {/* Commentaire JSX : Div principale de la barre latérale contenant l'icône d'ajout de tâche et l'indicateur de connexion. */}
 <div className="sidebar">
   {/* Icône d'ajout de tâche dans la partie supérieure, déclenchant la fonction handleIconClick lorsqu'elle est cliquée. */}
@@ -270,23 +270,23 @@ const handleLogoutClick = () => {
     <div className="overlay">
       <div className="overlay-content">
         {/* Contenu de l'overlay pour l'ajout de nouvelles tâches. */}
-        <div class="addtask">
-          <div class="addtask-content">
-            <p class="addtask-heading"><h2>New Task</h2></p>
+        <div className="addtask">
+          <div className="addtask-content">
+            <p className="addtask-heading"><h2>New Task</h2></p>
 
             {/* Formulaire pour saisir le titre et la description de la nouvelle tâche. */}
-            <form class="addtask_container">
-              <input placeholder="Titre" class="taskinput" name="Titre" type="text" value={newTask.Titre} onChange={handleInputChange}/>
-              <textarea placeholder="Description" class="taskinput2" name="Description" type="text" value={newTask.Description} onChange={handleInputChange}/>
+            <form className="addtask_container">
+              <input placeholder="Titre" className="taskinput" name="Titre" type="text" value={newTask.Titre} onChange={handleInputChange}/>
+              <textarea placeholder="Description" className="taskinput2" name="Description" type="text" value={newTask.Description} onChange={handleInputChange}/>
             </form>
           </div>
 
           {/* Boutons pour annuler l'ajout de la tâche ou la confirmer. */}
-          <div class="addtask-button-wrapper">
-            <button class="addtask-button " onClick={closeOverlay}>
+          <div className="addtask-button-wrapper">
+            <button className="addtask-button " onClick={closeOverlay}>
               ANNULER <ImCancelCircle className='btn_icon'/>
             </button>
-            <button class="addtask-button primary" onClick={handleAddTask}>
+            <button className="addtask-button primary" onClick={handleAddTask}>
               AJOUTER <IoMdAddCircle className='btn_icon'/>
             </button>
           </div>
@@ -311,7 +311,7 @@ const handleLogoutClick = () => {
 
 
 
-  <div class="task_container">
+  <div className="task_container">
     {/* Barre de navigation avec le titre "Mon espace de travail" */}
       <div className="navbar"><h2>Mon espace de travail</h2></div>
 
@@ -319,7 +319,7 @@ const handleLogoutClick = () => {
 
 <div className="searchbar">
   {/* Groupe d'entrées pour la recherche, mot-clé et filtre de date */}
-  <div class="input-group">
+  <div className="input-group">
     {/* Conteneur pour les champs de recherche et mot-clé */}
     <div className='search-container'>
       {/* Champ de recherche par email */}
@@ -397,21 +397,21 @@ const handleLogoutClick = () => {
     .sort((a, b) => a.Titre.localeCompare(b.Titre))
     .map((task) => (
       // Carte individuelle pour chaque tâche 
-      <div key={task._id} class="task_card">
+      <div key={task._id} className="task_card">
         {/* Conteneur pour la première lettre du titre */}
-        <div class="title_container">
-          <div class="first_letter">
+        <div className="title_container">
+          <div className="first_letter">
             {/* Afficher la première lettre du titre en majuscule */}
-            <span class="letter">{task.Titre.charAt(0).toUpperCase()}</span>
+            <span className="letter">{task.Titre.charAt(0).toUpperCase()}</span>
           </div>
           {/* Conteneur pour le titre complet */}
-          <div class="title"> 
+          <div className="title"> 
             {/* Afficher le titre complet avec un effet de survol pour voir le titre complet */}
-            <span class="full_title" title={task.Titre}>{task.Titre}</span>
+            <span className="full_title" title={task.Titre}>{task.Titre}</span>
           </div>
         </div>
         {/* Afficher la description de la tâche */}
-        <span class="description_body">
+        <span className="description_body">
           {task.Description}
         </span>
         {/* Conteneur pour le sélecteur de statut, l'icône de modification et l'overlay de modification */}
@@ -451,20 +451,20 @@ const handleLogoutClick = () => {
             <div className="overlay">
               <div className="overlay-content">
                 {/* Contenu de l'overlay pour la modification de la tâche */}
-                <div class="addtask">
-                  <div class="addtask-content">
-                    <p class="addtask-heading"><h2>Modifier Tache</h2></p>
+                <div className="addtask">
+                  <div className="addtask-content">
+                    <p className="addtask-heading"><h2>Modifier Tache</h2></p>
                     {/* Formulaire pour la modification du titre et de la description */}
-                    <form class="addtask_container">
-                      <input placeholder="Titre" class="taskinput" name="Titre" type="text" value={updatedTask.Titre} onChange={handleInputUpdateChange}/>
-                      <textarea placeholder="Description" class="taskinput2" name="Description" type="text" value={updatedTask.Description} onChange={handleInputUpdateChange}/>
+                    <form className="addtask_container">
+                      <input placeholder="Titre" className="taskinput" name="Titre" type="text" value={updatedTask.Titre} onChange={handleInputUpdateChange}/>
+                      <textarea placeholder="Description" className="taskinput2" name="Description" type="text" value={updatedTask.Description} onChange={handleInputUpdateChange}/>
                     </form>
                   </div>
                   {/* Boutons pour annuler, modifier et supprimer la tâche */}
-                  <div class="addtask-button-wrapper">
-                    <button class="addtask-button" onClick={closeOverlay}>ANNULER </button>
-                    <button class="addtask-button primary" onClick={handleUpdateTask}>MODIFIER <RxUpdate className='btn_icon'/></button>
-                    <button class="addtask-button secondary" onClick={handleDeleteClick}>SUPPRIMER <ImCancelCircle className='btn_icon'/></button>
+                  <div className="addtask-button-wrapper">
+                    <button className="addtask-button" onClick={closeOverlay}>ANNULER </button>
+                    <button className="addtask-button primary" onClick={handleUpdateTask}>MODIFIER <RxUpdate className='btn_icon'/></button>
+                    <button className="addtask-button secondary" onClick={handleDeleteClick}>SUPPRIMER <ImCancelCircle className='btn_icon'/></button>
                   </div>
                 </div>            
               </div>
